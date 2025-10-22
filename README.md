@@ -1,7 +1,7 @@
 # QuickDrop Delivery Web App (Frontend Only)
 
 ## 🚀 Overview
-QuickDrop is a **professional, business-styled delivery web app frontend** designed for small businesses that need a simple way to request delivery services within a province. This project simulates how a delivery platform works — similar to Uber Eats — but focused solely on delivery logistics.
+QuickDrop is a **professional, business-styled delivery web app frontend** designed for small businesses that need a simple way to request delivery services within a province. This project simulates how a delivery platform works  similar to Uber Eats  but focused solely on delivery logistics.
 
 This version is **frontend-only**, meaning it runs completely in the browser without requiring any backend or API keys. It's perfect for demonstrations, portfolios, and UX/UI design showcases.
 
