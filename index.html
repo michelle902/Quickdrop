@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuickDrop — Login</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-auth">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">QuickDrop</div>
+      <nav class="top-nav">
+        <a href="#">Home</a>
+        <a href="request.html">Request Delivery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container auth-card">
+    <section class="card">
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to request deliveries within the province</p>
+
+      <form id="loginForm" class="form">
+        <label for="email">Business email</label>
+        <input id="email" name="email" type="email" placeholder="you@business.co" required>
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="••••••••" required>
+
+        <button type="submit" class="btn primary">Sign in</button>
+      </form>
+
+    </section>
+
+    <aside class="card alt-card">
+      <h3>Why QuickDrop?</h3>
+      <ul>
+        <li>Reliable provincial deliveries</li>
+        <li>Clear pricing — no hidden fees</li>
+        <li>Easy booking for small businesses</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© QuickDrop — Delivery simplified</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+<!-- FILE: dashboard.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuickDrop — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-dashboard">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">QuickDrop</div>
+      <nav class="top-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="request.html" class="cta">Request Delivery</a>
+        <button id="logoutBtn" class="btn link small">Log out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container dashboard-grid">
+    <section class="card welcome">
+      <h2 id="welcomeName">Hello,</h2>
+      <p class="muted">Use the button to create a new delivery request or view recent bookings.</p>
+      <a href="request.html" class="btn primary">Request New Delivery</a>
+    </section>
+
+    <section class="card stats">
+      <h3>Quick Stats</h3>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-number" id="stat-count">0</div>
+          <div class="stat-label">Requests this month</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">R<span id="stat-earn">0.00</span></div>
+          <div class="stat-label">Estimated revenue</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card history" id="historyCard">
+      <h3>Recent Requests</h3>
+      <ul id="historyList" class="list-reset">
+        <li class="muted">No requests yet — create your first delivery</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© QuickDrop — Built for small businesses</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
+<!-- FILE: request.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuickDrop — Request Delivery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-request">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">QuickDrop</div>
+      <nav class="top-nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="request.html" class="active">Request Delivery</a>
+        <button id="logoutBtn2" class="btn link small">Log out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container request-grid">
+    <section class="card form-card">
+      <h1>Request a Delivery</h1>
+      <p class="muted">Enter pickup and delivery information. We'll simulate distance and show an estimated price.</p>
+
+      <form id="requestForm" class="form">
+        <label for="businessName">Business / Seller Name</label>
+        <input id="businessName" name="businessName" type="text" placeholder="Your bakery or shop name" required>
+
+        <label for="pickup">Pickup address</label>
+        <input id="pickup" name="pickup" type="text" placeholder="123 Market St, Town" required>
+
+        <label for="delivery">Delivery address</label>
+        <input id="delivery" name="delivery" type="text" placeholder="Customer address" required>
+
+        <label for="packageDesc">Package description</label>
+        <input id="packageDesc" name="packageDesc" type="text" placeholder="e.g. 3x bottled sauces, fragile" required>
+
+        <div class="row">
+          <div>
+            <label for="weight">Weight (kg)</label>
+            <input id="weight" name="weight" type="number" min="0" step="0.1" placeholder="e.g. 2.5">
+          </div>
+
+          <div>
+            <label for="date">Preferred date</label>
+            <input id="date" name="date" type="date">
+          </div>
+        </div>
+
+        <button type="button" id="calculateBtn" class="btn outline">Calculate</button>
+        <button type="submit" class="btn primary">Confirm Request</button>
+      </form>
+    </section>
+
+    <aside class="card summary-card">
+      <h3>Estimate</h3>
+      <div id="estimateBox" class="estimate">
+        <p class="muted">Fill the form and click <strong>Calculate</strong></p>
+        <div id="result" class="result"></div>
+      </div>
+
+      <hr>
+
+      <h4>Pricing</h4>
+      <ul class="muted small">
+        <li>Base fee: R25.00</li>
+        <li>Per km: R10.00</li>
+        <li>Fragile / heavy items may incur adjustments (demo only)</li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">Need help? Call our support team — 012-345-6789</div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+
